@@ -27,11 +27,13 @@ export default function Home() {
             <View style={styles.buttonIcon}>
                 <Icon name="arrow-right" color="#FFF" size={24}/>
             </View>
+            
             <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
     </View>
     
-    </ImageBackground>
+  
+   </ImageBackground>
 
   );
 }
