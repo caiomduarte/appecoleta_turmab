@@ -1,20 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+//Importando o AppLoading
+import AppLoading from 'expo-app-loading';
+import React from 'react';
+
+//Importando as fontes do google fontes
+import {Ubuntu_700Bold} from '@expo-google-fonts/ubuntu';
+import {Roboto_400Regular, Roboto_500Medium} from '@expo-google-fonts/roboto';
+import {useFonts} from 'expo-font';
+
+import Home from './src/pages/home';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+  //Carregar as fontes que vamos utilizar
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Ubuntu_700Bold
+  });
+
+  if(!fontsLoaded){
+     return <AppLoading/> 
+  }
+
+  else{
+    return (
+        <Home/>
+      );
+  }
+  
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
