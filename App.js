@@ -11,6 +11,9 @@ import {useFonts} from 'expo-font';
 
 import Home from './src/pages/home';
 
+//Importar o componente de Rotas
+import Routes from './src/routes';
+
 export default function App() {
 
   //Carregar as fontes que vamos utilizar
@@ -26,7 +29,7 @@ export default function App() {
 
   else{
     return (
-        <Home/>
+        <Routes/>
       );
   }
   
