@@ -6,7 +6,20 @@ import {Feather as Icon} from '@expo/vector-icons';
 
 import styles from '../../styles';
 
+//importar o componente chamado useNavigation
+import {useNavigation} from '@react-navigation/native'
+
 export default function Home() {
+
+  const navigation = useNavigation();  
+
+  //Criar uma função de navegação
+  function NavegarParaTelaMapas(){
+    navigation.navigate('Mapas');
+  }
+
+
+
  return (
    <ImageBackground source={require('../../assets/home-background.png')}
       style={styles.container}
@@ -23,7 +36,7 @@ export default function Home() {
     </View>
 
     <View style={styles.footer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={NavegarParaTelaMapas}> 
             <View style={styles.buttonIcon}>
                 <Icon name="arrow-right" color="#FFF" size={24}/>
             </View>
